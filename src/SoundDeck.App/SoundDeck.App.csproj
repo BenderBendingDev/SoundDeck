@@ -77,8 +77,7 @@
 
   <!-- Publish Properties -->
   <PropertyGroup>
-    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
-    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishReadyToRun>False</PublishReadyToRun>
     <!-- NAudio and WinRT use runtime activation that is not safe to trim. -->
     <PublishTrimmed>False</PublishTrimmed>
   </PropertyGroup>
