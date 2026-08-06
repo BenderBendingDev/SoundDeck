@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SoundDeck.App (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SoundDeck.App (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

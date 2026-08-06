@@ -1,0 +1,35 @@
+# Compilación y herramientas
+**/bin/
+**/obj/
+.vs/
+.idea/
+artifacts/
+TestResults/
+*.user
+*.suo
+*.binlog
+
+# Paquetes e instaladores generados
+AppPackages/
+BundleArtifacts/
+publish/
+*.msix
+*.msixupload
+*.appx
+*.appxbundle
+*.cer
+*.pfx
+
+# Datos locales y contenido del usuario
+*.db
+*.db-shm
+*.db-wal
+Library/
+backups/
+
+# Secretos y sistema
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini

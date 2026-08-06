@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>SoundDeck</value></data>
+  <data name="AddSound.Content" xml:space="preserve"><value>Añadir sonido</value></data>
+  <data name="Search.PlaceholderText" xml:space="preserve"><value>Buscar sonidos…</value></data>
+  <data name="MixerTitle.Text" xml:space="preserve"><value>Mezclador</value></data>
+  <data name="Microphone.Text" xml:space="preserve"><value>Micrófono</value></data>
+  <data name="LocalOutput.Text" xml:space="preserve"><value>Salida local</value></data>
+  <data name="VirtualOutput.Text" xml:space="preserve"><value>Salida virtual</value></data>
+  <data name="StartWithWindows.Header" xml:space="preserve"><value>Iniciar con Windows</value></data>
+</root>
