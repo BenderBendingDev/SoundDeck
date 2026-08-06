@@ -22,11 +22,13 @@ jobs:
             **/*.csproj
             global.json
       - name: Restaurar
-        run: dotnet restore SoundDeck.sln -p:Platform=x64
-      - name: Compilar
-        run: dotnet build SoundDeck.sln --configuration Release --no-restore -p:Platform=x64
+        run: |
+          dotnet restore src/SoundDeck.App/SoundDeck.App.csproj -p:Platform=x64 -r win-x64
+          dotnet restore tests/SoundDeck.Tests/SoundDeck.Tests.csproj
       - name: Probar
         run: dotnet test tests/SoundDeck.Tests/SoundDeck.Tests.csproj --configuration Release --no-restore --logger trx
+      - name: Compilar
+        run: dotnet build src/SoundDeck.App/SoundDeck.App.csproj --configuration Release --no-restore -p:Platform=x64 -r win-x64
       - name: Publicar resultados
         if: always()
         uses: actions/upload-artifact@v4
