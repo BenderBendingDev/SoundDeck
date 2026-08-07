@@ -71,6 +71,13 @@ public sealed class AudioEngine : IAudioEngine
         await _gate.WaitAsync(cancellationToken);
         try
         {
+            if (State.IsPlaying && _playingId == sound.Id)
+            {
+                StopPlaybackCore();
+                SetState(new PlaybackStatus(null, false));
+                return;
+            }
+
             StopPlaybackCore();
             var generation = ++_generation;
             _playingId = sound.Id;
