@@ -81,4 +81,17 @@
     <!-- NAudio and WinRT use runtime activation that is not safe to trim. -->
     <PublishTrimmed>False</PublishTrimmed>
   </PropertyGroup>
+
+  <Target Name="SignSoundDeckPayload"
+          BeforeTargets="_GenerateAppxPackageFile"
+          Condition="'$(PayloadSigningThumbprint)' != ''">
+    <ItemGroup>
+      <_SoundDeckSigningFiles Include="@(AppxPackagePayload)"
+                              Condition="'%(Extension)' == '.dll' or '%(Extension)' == '.exe'" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(IntermediateOutputPath)sounddeck-signing-files.txt"
+                      Lines="@(_SoundDeckSigningFiles->'%(FullPath)')"
+                      Overwrite="true" />
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -Command &quot;&amp; { $text = [IO.File]::ReadAllText('$(MSBuildProjectDirectory)\..\..\scripts\Sign-Binaries.ps1', [Text.Encoding]::Unicode); &amp; ([scriptblock]::Create($text)) -ListPath '$(IntermediateOutputPath)sounddeck-signing-files.txt' -Thumbprint '$(PayloadSigningThumbprint)' }&quot;" />
+  </Target>
 </Project>
